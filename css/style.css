@@ -1,0 +1,1338 @@
+@charset "utf-8";
+
+/*
+ width & height
+ float & position
+ margin & padding
+*/
+
+* {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	color: #333333;
+}
+
+html, body {
+	width: 100%;
+}
+
+a, strong {
+	text-decoration: none;
+	display: block;
+}
+
+/* 960px ~ navigation bar */
+@media screen and (min-width: 960px) {
+	header {
+		width: 100%; 
+		height: 120px;
+		float: left;
+		position: fixed;
+		z-index: 3;
+		background-color: #f6f5ef;
+	}
+	
+	.logo {
+		float: left;
+	}
+
+	.logo > a {
+		float: left;
+		margin: 22.5px 0px 22.5px 30px;
+	}
+
+	.menu {
+		height: 105px;
+		float: right;
+		margin: 15px 0px 0px 0px;
+	}
+
+	.headerlink-wrapper {
+		height: 20px;
+		float: right;
+		margin: 0px 50px 0px 0px;
+	}
+
+	.headerlink-narrow {
+		display: none;
+	}
+
+	.headerlink > li {
+		float: left;
+	}
+
+	.headerlink > li:nth-child(-n + 4) > a {
+		padding: 0px 15px;
+		font: normal 13px Avenir, Arial, georgia;
+		color: #555;
+	}
+
+	.headerlink > li:nth-child(-n + 3) > a {
+		border-right: 1px solid #ddd;
+	}
+
+	.headerlink > li:nth-child(-n + 4) > a:hover {
+		text-decoration: underline;
+	}
+
+	.headerlink > li:nth-child(5) {
+		width: 34px;  /*width: 160px;*/
+		height: 34px;
+		position: relative;
+		top: -10px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		transition: all 0.3s;
+	}
+
+	.headerlink > li:nth-child(5) > a {
+		float: right;
+		margin-right: 14px;
+	}
+
+	.headerlink > li:nth-child(5) > a > img {
+		position: relative;
+		top: 7px;
+		left: 7px;
+	}
+
+	.searchbox {
+		width: 120px;
+		height: 20px;
+		float: left;
+		margin-top: 7px;
+		margin-left: 5px;
+		border: none;
+		display: none;
+	}
+
+	.searchbox::placeholder {
+		font-size: 12px;
+	}
+
+	.main-background {
+		display: none;
+	}
+	
+	.navi-narrow {
+		display: none;
+	}
+	
+	.navi-wrapper {
+		margin: 35px 0px 0px 0px;
+	}
+
+	.navi {
+		margin: 0px 15px 0px 0px;
+	}
+
+	.navi > li {
+		float: left;
+	}
+
+	.navi > li > a {
+		float: left;
+		padding: 15px 15px 40px 15px;
+		font: normal 13px Avenir, Arial, georgia;
+	}
+
+	.navi > li > a:hover {
+		text-decoration: underline;
+		background-color: #2C2A29;
+		color: #669900;
+	}
+
+	.submenu-wrapper {
+		width: 100%;
+		max-height: 0px;
+		position: fixed;
+		top: 120px;
+		left: 0px;
+		background-color: #2C2A29;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+
+	.submenu-wrapper > div {
+		width: 1100px;  /* 화면 크기에 따라 조절 필요 */
+		margin: 0 calc((100% - 925px) / 2);
+	}
+
+	.submenu {
+		width: 185px;
+		float: left;
+		padding: 15px 0px 20px 0px;
+		font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	}
+
+	.submenu > li.submenu-title {
+		padding: 8px 0px 10px 0px;
+	}
+
+	.submenu > li {
+		padding: 3px 0px;
+	}
+
+	.submenu > li.submenu-title > a {
+		color: #fff;
+		font-size: 14px;
+	}
+
+	.submenu > li > a {
+		color: #999;
+		font-size: 12px;
+	}
+
+	.submenu > li > a:hover {
+		text-decoration: underline;
+	}
+}
+
+/* ~ 959px navigation bar */
+@media screen and (max-width: 959px) {
+	header {
+		width: 100%; 
+		height: 80px;
+		float: left;
+		position: fixed;
+		overflow: hidden;
+		z-index: 5;
+		background-color: #f6f5ef;
+	}
+	
+	.logo {
+		float: left;
+	}
+
+	.logo > a {
+		float: left;
+		margin: 10px 0px 10px 10px;
+	}
+	
+	.logo > a > img {
+		width: 60px;
+	}
+
+	.menu {
+		height: 60px;
+		float: right;
+		margin: 10px 10px 10px 0px;
+	}
+
+	.headerlink-wide {
+		display: none;
+	}
+	
+	.headerlink {
+		width: 210px;
+	}
+	
+	.headerlink > li {
+		float: left;
+	}
+	
+	.headerlink > li > a {
+		width: 60px;
+		height: 60px;
+		margin-left: 10px;
+	}
+	
+	.headerlink > li > a > img {
+		width: 30px;
+		height: 35px;
+		padding: 12.5px; 15px;
+	}
+	
+	.main-background {
+		width: calc(100% - 400px);
+		height: 100%;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		background: #000000;
+		opacity: 0.7;
+		display: none;
+	}
+	
+	.navi-wrapper {
+		width: 400px;
+		height: 100%;
+		position: fixed;
+		top: 0px;
+		right: -400px;
+		overflow: scroll;
+		background: #007042;
+		transition: right 0.25s;
+	}
+	
+	.navi-narrow {
+		display: block;
+	}
+	
+	.navi-top {
+		width: 400px;
+		float: left;
+		padding: 20px 0px;
+		background: #2d2926;
+	}
+	
+	.close-button {
+		width: 34px;
+		height: 34px;
+		margin-left: 20px;
+	}
+	
+	.close-button > img {
+		width: 24px;
+		height: 24px;
+		padding: 5px;
+		transition: all 1s;
+	}
+	
+	.close-button > img:hover {
+		transform: rotate(180deg);
+	}
+	
+	.navi-search {
+		width: 200px;
+		height: 30px;
+		float: left;
+		margin-left: 20px;
+	}
+	
+	.search-button {
+		width: 60px;
+		height: 34px;
+		line-height: 34px;
+		float: left;
+		margin-left: 20px;
+		text-align: center;
+		background: #666;
+		color: #fff;
+		border-radius: 3px;
+	}
+	
+	.search-button:hover {
+		text-decoration: underline;
+	}
+	
+	.navi > li {
+		width: 400px;
+		float: left;
+	}
+	
+	.navi > li > a {
+		width: 385px;
+		height: 50px;
+		line-height: 50px;
+		margin: 0;
+		padding-left: 15px;
+		background: #007042;
+		color: #ffffff;
+		border-bottom: 1px solid #222222;
+		font-size: 22px;
+		font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	}
+	
+	.navi > li > a:hover {
+		text-decoration: underline;
+	}
+	
+	.navi > li.navi-open > a::after {
+ 		content: url(https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png);
+  		width: 16px;
+		float: right;
+		padding-right: 35px;
+	}
+	
+	.navi > li.navi-close > a::after {
+ 		content: url(https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_up_w.png);
+  		width: 16px;
+		float: right;
+		padding-right: 35px;
+	}
+	
+	.navi-top > a:nth-child(1) {
+		width: 30px;
+		height: 30px;
+		float: left;
+		border-bottom: none;
+	}
+	
+	.submenu-wrapper {
+		width: 400px;
+		float: left;
+	}
+	
+	.submenu {
+		float: left;
+	}
+	
+	.submenu > li {
+		width: 400px;
+		/* height: 35px; */
+		height: 0px;
+		float: left;
+		background: #222222;
+		overflow: hidden;
+		transition: height 0.7s;
+	}
+	
+	.submenu > li.submenu-title {
+		width: 400px;
+		/* height: 50px; */
+		height: 0px;
+		float: left;
+		background: #459573;
+		/* border-bottom: 1px solid #222222; */
+		border-bottom: none;
+		overflow: hidden;
+		transition: height 0.7s;
+	}
+	
+	.submenu > li > a {
+		width: 350px;
+		height: 35px;
+		line-height: 35px;
+		margin: 0;
+		padding-left: 35px;
+		color: #999999;
+		font-size: 18px;
+		font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	}
+	
+	.submenu > li.submenu-title > a {
+		width: 350px;
+		height: 50px;
+		line-height: 50px;
+		margin: 0;
+		padding-left: 25px;
+		color: #ffffff;
+		font-size: 20px;
+		font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+		border-bottom: 1px solid #ffffff;
+	}
+	
+	.submenu > li > a:hover {
+		text-decoration: underline;
+	}
+	
+	.submenu > li.submenu-open > a::after {
+ 		content: url(https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png);
+  		width: 12px;
+		float: right;
+		padding-right: 20px;
+	}
+	
+	.submenu > li.submenu-close > a::after {
+ 		content: url(https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_up_w.png);
+  		width: 12px;
+		float: right;
+		padding-right: 20px;
+	}
+}
+
+.contents {
+	width: 100%;
+	position: relative;
+	top: 120px;
+}
+
+.new {
+	position: relative;
+	height: 34vw;
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_newyear_top_bg.jpg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.new-slogan {
+    width: 18%;
+	position: absolute;
+	top: 27%;
+    left: 14.5%;
+}
+
+.new-image1 {
+    width: 15.4%;
+	position: absolute;
+	top: 17.8%;
+    left: 39%;
+}
+
+.new-image2 {
+    width: 16.4%;
+	position: absolute;
+	top: 31.4%;
+    left: 49.4%;
+}
+
+.new-image3 {
+    width: 16.4%;
+	position: absolute;
+    top: 24.5%;
+    right: 22.4%;
+}
+
+.new-button {
+    width: 10%;
+	position: absolute;
+	top: 66%;
+	left: 18.1%;
+	padding: 3px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #046241;
+	border: 2px solid #046241;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.new-button:hover {
+	text-decoration: underline;
+	color: #fff;
+	background-color: #046241
+}
+
+.badge {
+	position: fixed;
+	top: 145px;
+	right: 10px;
+	z-index: 4;
+}
+
+/* 960px ~ navigation bar */
+@media screen and (min-width: 960px) {
+	.noticebar {
+		width: 100%;
+		height: 62px;
+		position: relative;
+	}
+	
+	.notice {
+		width: 50%;
+		height: 62px;
+		float: left;
+		background-color: #111;
+	}
+
+	.notice-title {
+		width: 65px;
+		margin: 21.5px 0px 21.5px 20px;
+		float: left;
+	}
+
+	.notice-content {
+		width: 290px;
+		height: 24px;
+		margin: 19px 20px 0px 20px;
+		float: left;
+		overflow: hidden;
+	}
+	
+	.notice-plus > img {
+		width: 36px;
+		height: 36px;
+		margin: 13px 20px 13px 0px;
+		float: right;
+	}
+
+	.promotion {
+		width: 50%;
+		height: 62px;
+		float: left;
+		background-color: #fff;
+	}
+	
+	.promotion-title {
+		height: 18px;
+		position: absolute;
+		top: 9px;
+		left: 20%;
+	}
+}
+
+/* ~ 959px navigation bar */
+@media screen and (max-width: 959px) {
+	.noticebar {
+		width: 100%;
+		height: 124px;
+		position: relative;
+	}
+	
+	.notice {
+		width: 100%;
+		height: 62px;
+		float: left;
+		background-color: #111;
+	}
+
+	.notice-title {
+		width: 65px;
+		margin: 21.5px 0px 21.5px 23.5%;
+		float: left;
+	}
+
+	.notice-content {
+		width: 290px;
+		height: 24px;
+		margin: 19px 20px 0px 20px;
+		float: left;
+		overflow: hidden;
+	}
+	
+	.notice-plus > img {
+		width: 36px;
+		height: 36px;
+		position: absolute;
+		right: 23.5%;
+		margin: 13px 0px 13px 0px;
+	}
+	
+	.promotion {
+		width: 100%;
+		height: 62px;
+		float: left;
+		background-color: #fff;
+	}
+
+	.promotion-title {
+		height: 18px;
+		position: absolute;
+		top: 9px;
+		left: 30%;
+	}
+}
+
+.notice-content > a {
+	width: 290px;
+	height: 24px;
+	position: relative;
+	top: 0px;
+	line-height: 24px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-size: 14px;
+	letter-spacing: -0.5px;
+	color: #fff;
+	background-color: #111;
+	transition: top 0.7s;
+}
+
+.notice-content > a:hover {
+	text-decoration: underline;
+}
+
+.promotion > a {
+	height: 36px;
+	margin: 13px 50px;
+	position: relative;
+}
+
+.promotion-plus, .promotion-close {
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	right: 20%;
+}
+
+.promotion-close {
+	display: none;
+}
+
+.promotion-block {
+	width: 100%;
+	height: 0px;
+	position: relative;
+	overflow: hidden;
+	transition: height 0.6s;
+}
+
+.promotion-block > div:nth-child(-n + 3) {
+	position: absolute;
+	left: calc((100% - 820px) / 2);
+	top: 20px;
+	transition: margin-left 0.7s;
+	z-index: 1;
+}
+
+.promotion-content1 {
+	margin-left: 0px;
+	opacity: 1;
+}
+
+.promotion-content2 {
+	margin-left: 840px;
+	opacity: 0.5;
+}
+
+.promotion-content3 {
+	margin-left: -840px;
+	opacity: 0.5;
+}
+
+.promotion-button {
+    width: 100px;
+	padding: 8px;
+	position: absolute;
+	left: calc((100% - 100px) / 2);
+	top: 500px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #000;
+	border: 2px solid #000;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.promotion-button:hover {
+	text-decoration: underline;
+	background-color: #000;
+	color: #fff;
+}
+
+.promotion-left-button, .promotion-right-button {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	border: 2px solid #222;
+    border-radius: 27.5px;
+	z-index: 2;
+}
+
+.promotion-left-button {
+	top: 200px;
+	left: 3%;
+}
+
+.promotion-right-button {
+	top: 200px;
+	right: 3%;
+}
+
+.promotion-left-button:hover, .promotion-right-button:hover {
+	background-color: #fff;
+}
+
+.promotion-left-button > img {
+	position: relative;
+	top: 25%;
+	left: 34%;
+}
+
+.promotion-right-button > img {
+	position: relative;
+	top: 25%;
+	left: 40%;
+}
+
+.promotion-slide {
+	width: 120px;
+	position: absolute;
+	left: calc((100% - 120px) / 2);
+	top: 575px;
+	text-align: center;
+	margin-left: 5px;
+}
+
+.promotion-slide > a {
+	display: inline-block;
+	overflow: hidden;
+	margin: 0px;
+}
+
+.promotion-slide-onoff {
+	margin: 0px 4px;
+}
+
+.promotion-slide-start {
+	width: 0px;
+	position: relative;
+	left: 5px;
+	margin: 0px;
+}
+
+.promotion-slide-stop {
+	width: 13px;
+	margin: 0px 4px;
+}
+
+.rewards {
+	width: 100%;
+	height: 240px;
+	background-color: #1e3932;
+}
+
+.rewards-wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 30px 0px;
+}
+
+.rewards-logo {
+	float: left;
+}
+
+.rewards-logo > img {
+	width: 176px;
+	height: 152px;
+	margin: 0px 35px 14px 15px;
+}
+
+.rewards-up {
+	width: 700px;
+	float: left;
+}
+
+.rewards-upleft {
+	float: left;
+}
+
+.rewards-upleft > h2, .rewards-upleft > h2 > span {
+	margin: 0px 0px 12px 0px;
+	color: #fff;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-size: 26px;
+    letter-spacing: -1.5px;
+}
+
+.rewards-upleft > h2 {
+	font-weight: normal;
+}
+
+.rewards-upleft > p, .rewards-upleft > p > span {
+	color: #fff;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-size: 17px;
+    letter-spacing: -1px;
+}
+
+
+.rewards-upleft > p {
+	margin-bottom: 2px;
+}
+
+.rewards-upleft > p:nth-child(3) {
+	margin-bottom: 15px;
+}
+
+.rewards-upright {
+	float: right;
+}
+
+.rewards-up {
+	border-bottom: 1px solid #fff;
+}
+
+.signup-button {
+    width: 70px;
+	height: 28px;
+	float: left;
+	padding: 3px;
+	margin-top: 50px;
+	margin-right: 8px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	line-height: 28px;
+	text-align: center;
+	color: #fff;
+	background-color: #046241;
+	border: 2px solid #046241;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.signup-button:hover {
+	text-decoration: underline;
+}
+
+.login-button {
+    width: 70px;
+	height: 28px;
+	float: left;
+	padding: 3px;
+	margin-top: 50px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	line-height: 28px;
+	text-align: center;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.login-button:hover {
+	text-decoration: underline;
+}
+
+.rewards-downleft {
+	float: left;
+}
+
+.rewards-downleft > p, .rewards-downleft > p > span {
+	color: #fff;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-size: 14px;
+    letter-spacing: -1px;
+}
+
+.rewards-downleft > p:nth-child(1) {
+	margin-top: 20px;
+}
+
+.rewards-downright {
+	float: left;
+}
+
+.egift-button {
+    width: 134px;
+	height: 28px;
+	padding: 3px;
+	margin: 20px 0px 0px 10px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	line-height: 28px;
+	text-align: center;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.egift-button:hover {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.main-bean {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_newyear_promotion_bg.jpg");
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-bean-image {
+	height: 380px;
+	position: absolute;
+    top: 80px;
+    left: 20%;
+}
+
+.main-bean-contents {
+	position: absolute;
+	top: 150px;
+	right: 20%;
+}
+
+.main-bean-button {
+    width: 100px;
+	margin-top: 40px;
+	padding: 10px;
+	position: absolute;
+	left: 0px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #633510;
+	border: 2px solid #633510;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.main-bean-button:hover {
+	text-decoration: underline;
+	background-color: #633510;
+	color: #fff;
+}
+
+.main-coffee {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2023/230125_pc_reserve_bg.jpg");
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-coffee-image-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-coffee-image {
+	width: 2000px;
+	height: 400px;
+	position: absolute;
+	right: -400px;
+}
+
+.main-coffee-name {
+	position: absolute;
+	top: 15%;
+	right: 50%;
+}
+
+.main-coffee-button {
+    width: 100px;
+	padding: 10px;
+	position: absolute;
+	top: 65%;
+	right: 57%;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.main-coffee-button:hover {
+	text-decoration: underline;
+	background-color: #fff;
+	color: #000;
+}
+
+.favorite {
+	width: 100%;
+    height: 800px;
+    position: relative;
+	background: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Chrismas2_PTF_bg.png) center center fixed no-repeat #45434c;
+    background-size: auto 87%;
+    background-position: bottom;
+	overflow: hidden;
+}
+
+.favorite-contents {
+	width: 30%;
+	height: 70%;
+	position: absolute;
+	top: 17%;
+	left: 5%;
+}
+
+.favorite-title {
+	width: 55%;
+	float: right;
+}
+
+.favorite-text {
+	width: 75%;
+	float: right;
+	margin-top: 50px;
+}
+
+.favorite-button {
+    width: 100px;
+	padding: 10px;
+	float: right;
+	margin-top: 50px;
+	margin-left: 200px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.favorite-button:hover {
+	text-decoration: underline;
+	background-color: #fff;
+	color: #000;
+}
+
+.favorite-image {
+	width: 60%;
+	position: absolute;
+	top: 12%;
+	right: 2%;
+}
+
+.magazine {
+	width: 100%;
+	height: 400px;
+	position: relative;
+    background: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png) no-repeat 50% 100%;
+    background-size: auto 353px;
+}
+
+.magazine-title {
+	position: absolute;
+	top: 32%;
+	left: 15%;
+	z-index: 1;
+}
+
+.magazine-image {
+	position: absolute;
+	right: 15%;
+}
+
+.magazine-button {
+    width: 100px;
+	padding: 10px;
+	position: absolute;
+	top: 65%;
+	left: 30%;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #000;
+	border: 2px solid #000;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.magazine-button:hover {
+	text-decoration: underline;
+	background-color: #000;
+	color: #fff;
+}
+
+.store {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+    background-size: 100% auto;
+}
+
+.store-image1 {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+}
+
+.store-image2 {
+	position: absolute;
+	top: 40%;
+	left: 15%;
+}
+
+.store-image3 {
+	position: absolute;
+	top: -15%;
+	left: 25%;
+}
+
+.store-image4 {
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+}
+
+.store-title {
+	position: absolute;
+	top: 20%;
+	right: 20%;
+}
+
+.store-text {
+	position: absolute;
+	top: 40%;
+	right: 20%;
+}
+
+.store-button {
+    width: 100px;
+	padding: 10px;
+	position: absolute;
+	top: 70%;
+	right: 30%;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 14px;
+	text-align: center;
+	color: #000;
+	border: 2px solid #000;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.store-button:hover {
+	text-decoration: underline;
+	background-color: #000;
+	color: #fff;
+}
+
+footer {
+	width: 100%;
+	position: relative;
+	margin-top: 100px;
+	background-color: #272727;
+}
+
+.footer-menu-wrapper {
+	width: calc(100% - 100px);
+	height: 250px;
+    position: relative;
+	margin: 0px;
+	padding: 15px 50px 0px 50px;
+}
+
+.footer-menu {
+	width: 75%;
+	height: 250px;
+	position: relative;
+	margin: 0 auto;
+	background: url(https://www.starbucks.co.kr/common/img/footer/footer_logo.png) right 8px no-repeat;
+}
+
+.footer-menu > ul {
+	width: 20%;
+	float: left;
+}
+
+.footer-menu > li {
+	float: left;
+}
+
+.footer-menu > ul > li > a {
+	color: #fff;
+	margin-bottom: 8px;
+	font-size: 12px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	letter-spacing: -1px;
+}
+
+.footer-menu > ul > li.footer-menu-title > a {
+	margin: 22px 0px;
+	font-size: 14px;
+	font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	letter-spacing: 0px;
+}
+
+.footer-menu > ul > li > a:hover {
+	text-decoration: underline;
+}
+
+.footer-prize {
+	width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.footer-prize > ul {
+	text-align: center;
+}
+
+.footer-prize > ul > li {
+	display: inline-block;
+}
+
+.footer-link {
+	width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.footer-link > ul {
+	text-align: center;
+}
+
+.footer-link > ul > li {
+	display: inline-block;
+}
+
+.footer-link > ul > li:nth-child(-n + 7) {
+	border-right: 1px solid #393939;
+}
+
+.footer-link > ul > li > a {
+	color: #999;
+	padding : 2px 7px 2px 0px;
+    font-size: 12px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	letter-spacing: -1px;
+}
+
+.footer-link > ul > li:nth-child(1) > a {
+	color: #00b050;
+	font-weight: bold;
+}
+
+.footer-link > ul > li > a:hover {
+	text-decoration: underline;
+}
+
+.footer-buttons {
+	width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.footer-buttons > ul {
+	text-align: center;
+}
+
+.footer-buttons > ul > li {
+	display: inline-block;
+}
+
+.footer-buttons > ul > li > a {
+    width: 100px;
+	padding: 8px 5px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 12px;
+	text-align: center;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.footer-buttons > ul > li > a:hover {
+	text-decoration: underline;
+}
+
+.footer-info {
+	width: 100%;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.footer-info > ul {
+	text-align: center;
+}
+
+.footer-info > ul > li {
+	display: inline-block;
+	padding: 0px 12px 0px 2px;
+	color: #999;
+    	font-size: 12px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	letter-spacing: -0.5px;
+}
+
+.footer-info > ul > li:nth-child(-n + 3) {
+	border-right: 1px solid #393939;
+}
+
+.footer-copy {
+	width: 100%;
+	padding-bottom: 30px;
+	position: relative;
+	text-align: center;
+	color: #999;
+    font-size: 12px;
+	font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
